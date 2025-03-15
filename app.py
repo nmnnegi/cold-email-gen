@@ -2,7 +2,7 @@ import streamlit as st
 from email_gen import generate_cold_email
 
 api_key = st.secrets["GROQ_API_KEY"]
-st.write(f"API Key: {api_key}")
+
 
 # Streamlit App Title
 st.title("Cold Email Generator with Web Scraping 🚀")
