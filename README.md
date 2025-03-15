@@ -24,7 +24,3 @@ This project automates the process of generating personalized cold emails by scr
 3. **Run the App:**
    ```plaintext
    streamlit run app.py
-
-
-
-
