@@ -9,5 +9,7 @@ __pycache__/
 *.pyc
 *.pyo
 
-# Ignore environment config files
 .env
+
+# Ignore Streamlit secrets locally
+.streamlit/secrets.toml
