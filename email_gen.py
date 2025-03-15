@@ -40,9 +40,11 @@ def generate_cold_email(url):
         page_content = docs[0].page_content
 
         # Step 3: Preprocess Data (Keep only relevant content)
-        filtered_data = re.sub(r'\s+', ' ', page_content)
-        filtered_data = re.search(r"(Machine Learning Internship.*)", filtered_data)
-        filtered_data = filtered_data.group(1) if filtered_data else page_content
+        # Clean up the page content: remove excessive whitespace but keep structure
+        filtered_data = re.sub(r'\n+', '\n', page_content)  # Collapse multiple newlines into one
+        filtered_data = re.sub(r'[ \t]+', ' ', filtered_data)  # Remove excessive spaces/tabs
+        filtered_data = filtered_data.strip()
+
 
         # Step 4: Extract Job Details
         prompt_extract = PromptTemplate.from_template(
